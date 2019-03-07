@@ -1,54 +1,73 @@
 package com.chrisl.runningtour;
 
-import android.app.Activity;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class RunAdapter extends ArrayAdapter<Run>{
-    public RunAdapter(Activity context, ArrayList<Run> runs){
-        super(context,0, runs);
+
+public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder>
+{
+    private List<Run> runs;
+    private LayoutInflater mInflater;
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        public TextView runName, runLength;
+        public ImageView runImage;
+
+        public MyViewHolder (View view){
+            super (view);
+            runName = (TextView) view.findViewById(R.id.run_name_tv);
+            runLength = (TextView) view.findViewById(R.id.run_length_tv);
+            runImage = (ImageView) view.findViewById(R.id.run_image);
+
+        }
     }
 
+
+    // data is passed into the constructor
+    public RunAdapter(ArrayList<Run> runs) {
+        this.runs = runs;
+    }
 
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // Check if the existing view is being reused, otherwise inflate the view
-        View listItemView = convertView;
-        if(listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
-        }
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
+        View listItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
 
-        // Get the object located at this position in the list
-        Run currentRun = getItem(position);
+        return new MyViewHolder(listItemView);
+    }
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView runNameTV = (TextView) listItemView.findViewById(R.id.run_name_tv);
-        // get the run name and set this text on the TextView
-        runNameTV.setText(currentRun.getRunName());
+    @Override
+    public void onBindViewHolder (MyViewHolder holder, int positiion)
+    {
+        Run run = runs.get(positiion);
+        holder.runLength.setText(Double.toString(run.getRunDistance()));
+        holder.runName.setText(run.getRunName());
+        holder.runImage.setImageResource(run.getImageResourceID());
+    }
 
-        // Find the TextView in the list_item.xml layout with the run length
-        TextView runLengthTV = (TextView) listItemView.findViewById(R.id.run_length_tv);
-
-        ImageView defaultImageView = (ImageView) listItemView.findViewById(R.id.image);
-
-        // Return the list item layout (containing 2 TextViews)
-        // so that it can be shown in the ListView
-        return listItemView;
+    @Override
+    public int getItemCount()
+    {
+        return runs.size();
     }
 
 
 
 
 }
+
+
+
+
