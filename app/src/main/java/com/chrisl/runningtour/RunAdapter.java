@@ -1,6 +1,8 @@
 package com.chrisl.runningtour;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,7 +38,7 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder>
     public void onBindViewHolder (MyViewHolder holder, int position)
     {
         Run run = runList.get(position);
-        holder.runLength.setText(String.valueOf(run.getRunDistance()));
+        holder.runLength.setText(String.valueOf(run.getRunDistance())+" km");
         holder.runName.setText(run.getRunName());
         holder.runImage.setImageResource(run.getImageResourceID());
     }
@@ -71,8 +73,11 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder>
         {
             int mPosition = getLayoutPosition();
             Run currentRun = runList.get(mPosition);
+            Intent mapIntent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(currentRun.getNavigationString()));
+            mapIntent.setPackage("com.google.android.apps.maps");
+            itemView.getContext().startActivity(mapIntent);
 
-            Toast.makeText(v.getContext(), currentRun.getRunName(),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(v.getContext(), currentRun.getRunName(),Toast.LENGTH_SHORT).show();
 
         }
     }
