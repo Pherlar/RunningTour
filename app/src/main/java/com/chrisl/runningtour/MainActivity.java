@@ -22,17 +22,19 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                setTitle(R.string.app_name);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new HomeFragment())
+                        .commit();
             }
         });
 
@@ -45,8 +47,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new HomeFragment())
+                .replace(R.id.main_container, new HomeFragment())
                 .commit();
     }
 
@@ -97,8 +100,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.button_short_runs)
         {
-
-        } else if (id == R.id.button_medium_runs)
+            setTitle("Short Runs");
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_container, new ShortRunsFragment())
+                    .commit();
+        }
+        else if (id == R.id.button_medium_runs)
         {
 
         } else if (id == R.id.button_long_runs)

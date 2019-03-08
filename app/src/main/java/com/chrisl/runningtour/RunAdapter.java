@@ -1,41 +1,26 @@
 package com.chrisl.runningtour;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder>
 {
-    private List<Run> runs;
-    private LayoutInflater mInflater;
-
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView runName, runLength;
-        public ImageView runImage;
-
-        public MyViewHolder (View view){
-            super (view);
-            runName = (TextView) view.findViewById(R.id.run_name_tv);
-            runLength = (TextView) view.findViewById(R.id.run_length_tv);
-            runImage = (ImageView) view.findViewById(R.id.run_image);
-
-        }
-    }
+    private ArrayList<Run> runList;
 
 
     // data is passed into the constructor
     public RunAdapter(ArrayList<Run> runs) {
-        this.runs = runs;
+        this.runList = runs;
     }
 
 
@@ -44,15 +29,14 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder>
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View listItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
-
-        return new MyViewHolder(listItemView);
+        return new MyViewHolder(listItemView, this);
     }
 
     @Override
-    public void onBindViewHolder (MyViewHolder holder, int positiion)
+    public void onBindViewHolder (MyViewHolder holder, int position)
     {
-        Run run = runs.get(positiion);
-        holder.runLength.setText(Double.toString(run.getRunDistance()));
+        Run run = runList.get(position);
+        holder.runLength.setText(String.valueOf(run.getRunDistance()));
         holder.runName.setText(run.getRunName());
         holder.runImage.setImageResource(run.getImageResourceID());
     }
@@ -60,13 +44,42 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder>
     @Override
     public int getItemCount()
     {
-        return runs.size();
+        return runList.size();
     }
 
 
 
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    {
+        final TextView runName, runLength;
+        final ImageView runImage;
+        final RunAdapter rAdapter;
+
+        MyViewHolder(View view, RunAdapter adapter){
+            super (view);
+            runName = view.findViewById(R.id.run_name_tv);
+            runLength = view.findViewById(R.id.run_length_tv);
+            runImage = view.findViewById(R.id.run_image);
+            this.rAdapter = adapter;
+
+            ImageView icon = view.findViewById(R.id.running_icon);
+            icon.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v)
+        {
+            int mPosition = getLayoutPosition();
+            Run currentRun = runList.get(mPosition);
+
+            Toast.makeText(v.getContext(), currentRun.getRunName(),Toast.LENGTH_SHORT).show();
+
+        }
+    }
 
 }
+
+
 
 
 

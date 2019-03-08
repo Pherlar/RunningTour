@@ -47,6 +47,7 @@
             tools:text="length" />
 
         <ImageView
+            android:id="@+id/running_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
