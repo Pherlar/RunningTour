@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
+            Toast.makeText(this, "Settings feature coming soon!",Toast.LENGTH_SHORT).show();
             return true;
         }
 
@@ -115,10 +117,11 @@ public class MainActivity extends AppCompatActivity
         {
 
         } else if (id == R.id.nav_share)
+            Toast.makeText(this, "Soon you can share this app with your friends!",Toast.LENGTH_SHORT).show();
         {
-
-        } else if (id == R.id.nav_send)
-        {
+//Possible future addition (send button)
+        //} else if (id == R.id.nav_send)
+        //{
 
         }
 

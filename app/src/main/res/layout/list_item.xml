@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/run_name_tv"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/half_list_item_height"
             android:layout_weight="1"
             android:gravity="bottom"
@@ -38,8 +38,8 @@
 
         <TextView
             android:id="@+id/run_length_tv"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/half_list_item_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/run_name_tv"
             android:layout_marginTop="-1dp"
             android:layout_weight="1"
@@ -48,13 +48,42 @@
             android:textColor="@android:color/white"
             tools:text="length" />
 
-        <ImageView
-            android:id="@+id/running_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/ic_run_short" />
+        <TextView
+            android:id="@+id/run_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/run_length_tv"
+            android:layout_marginTop="-1dp"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="italic"
+            tools:text="type" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="right">
+                <ImageView
+                    android:id="@+id/running_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_run_short" />
+
+            <ImageView
+                android:id="@+id/share_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_menu_share" />
+        </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

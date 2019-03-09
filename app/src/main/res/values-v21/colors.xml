@@ -4,7 +4,7 @@
 
     <color name="primaryLightColor">#62727b</color>
         <!-- Primary dark color of the app (shown in the status bar) -->
-    <color name="colorPrimaryDark">#102027</color>
+    <color name="colorPrimaryDark">#124E6D</color>
 
     <color name="secondaryColor">#0097a7</color>
 
@@ -15,6 +15,11 @@
     <color name="primaryTextColor">#ffffff</color>
 
     <color name="colorAccent">#000000</color>
+
+    <color name ="color_navigation_list_background">#829DB4</color>
+
+    <color name ="color_selector_navigation_item">#000000</color>
+
 
 </resources>
 
