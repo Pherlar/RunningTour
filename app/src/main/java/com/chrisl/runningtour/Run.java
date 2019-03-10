@@ -1,5 +1,7 @@
 package com.chrisl.runningtour;
 
+//class to handle the Run object which holds all the attributes and data
+//of each run in the app
 public class Run
 {
 
@@ -19,7 +21,7 @@ public class Run
         mRunType = runType;
         mNavigationString = navigationString;
     }
-
+//public getter methods
     public String getRunName(){return mRunName;}
 
     public double getRunDistance(){return mRunDistance;}

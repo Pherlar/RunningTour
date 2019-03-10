@@ -16,6 +16,7 @@ public class RowViewHolder extends RecyclerView.ViewHolder implements View.OnCli
 
     public RowViewHolder(View v, RecyclerViewClickListener listener) {
         super(v);
+        //get all the text and image views
         runName = v.findViewById(R.id.run_name_tv);
         runLength = v.findViewById(R.id.run_length_tv);
         runImage = v.findViewById(R.id.run_image);
@@ -23,9 +24,8 @@ public class RowViewHolder extends RecyclerView.ViewHolder implements View.OnCli
         runIcon = v.findViewById(R.id.running_icon);
         shareIcon = v.findViewById(R.id.share_icon);
 
-
-
         this.mListener = listener;
+        //set onClick listeners on the icons in each row of the view holder
         runIcon.setOnClickListener(this);
         shareIcon.setOnClickListener(this);
     }

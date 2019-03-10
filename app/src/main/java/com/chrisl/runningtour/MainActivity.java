@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+     //menu handlers automatically imported by Android studio
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -109,13 +110,22 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.button_medium_runs)
         {
-
+            setTitle("Medium Runs");
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_container, new MediumRunsFragment())
+                    .commit();
         } else if (id == R.id.button_long_runs)
         {
-
+            setTitle("Long Runs");
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_container, new LongRunsFragment())
+                    .commit();
         } else if (id == R.id.button_novelty_runs)
         {
-
+            setTitle("Novelty Runs");
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_container, new NoveltyRunsFragment())
+                    .commit();
         } else if (id == R.id.nav_share)
             Toast.makeText(this, "Soon you can share this app with your friends!",Toast.LENGTH_SHORT).show();
         {
