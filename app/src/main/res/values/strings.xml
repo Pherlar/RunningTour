@@ -34,5 +34,29 @@
     <string name="one_way_brewery_tour">One Way Brewery Tour</string>
     <string name="one_way">One way</string>
     <string name="loop">Loop</string>
+    <string name="brighton_le_sands_tourer_string">Brighton-Le-Sands tourer</string>
+    <string name="cooks_river_run_string">Cooks River Run</string>
+    <string name="sydney_harbour_explorer_string">Sydney Harbour Explorer</string>
+    <string name="placeholder_string">Placeholder</string>
+    <string name="the_bay_run_string">The Bay Run</string>
+    <string name="bondi_to_coogee_string">Bondi to Coogee</string>
+    <string name="spit_to_manly_string">Spit to Manly</string>
+    <string name="sydney_colour_run_string">Sydney Colour Run</string>
+    <string name="waverton_stair_sesh_string">Waverton Stair Sesh</string>
+    <string name="beer_belly_bolt_string">Beer Belly Bolt</string>
+    <string name="botanic_blast_string">Botanic Blast</string>
+    <string name="bridge_dash_string">Bridge Dash</string>
+    <string name="cremorne_crush_string">Cremorne Crush</string>
+    <string name="centennial_circuit_string">Centennial Circuit</string>
+    <string name="barangaroo_bounce_string">Barangaroo Bounce</string>
+    <string name="im_using_string">I\'m using</string>
+    <string name="to_recommend_String">to recommend this running route!</string>
+    <string name="choose_one_string">choose one</string>
+    <string name="share_app_string">Soon you can share this app with your friends!</string>
+    <string name="short_runs_string">Short Runs</string>
+    <string name="medium_runs_string">Medium Runs</string>
+    <string name="long_runs_string">Long Runs</string>
+    <string name="novelty_runs_string">Novelty Runs</string>
+    <string name="settings_feature_string">Settings feature coming soon!</string>
 
 </resources>

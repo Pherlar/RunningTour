@@ -57,10 +57,10 @@ public class ShortRunsFragment extends Fragment
                             Intent i = new Intent(Intent.ACTION_SEND);
                             i.setType("text/plain");
                             i.putExtra(Intent.EXTRA_SUBJECT, "@string/app_name");
-                            String message = "I'm using "+ getResources().getString(R.string.app_name) + " to recommend this running route!\n";
+                            String message = getString(R.string.im_using_string)+ getResources().getString(R.string.app_name) + getString(R.string.to_recommend_String);
                             message = message + " "+ currentRun.getNavigationString();
                             i.putExtra(Intent.EXTRA_TEXT, message);
-                            startActivity(Intent.createChooser(i, "choose one"));
+                            startActivity(Intent.createChooser(i, getString(R.string.choose_one_string)));
 
                         }catch(Exception e){
                             e.toString();
@@ -80,18 +80,20 @@ public class ShortRunsFragment extends Fragment
     private void buildRunList()
     {
         runList = new ArrayList<>();
-        runList.add(new Run("Botanic Blast", 1.5, R.drawable.botanic_gardens, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Bridge Dash", 2.7,R.drawable.sydney_harbour_bridge, getString(R.string.one_way), getString(R.string.harbour_bridge_nav_string)));
-        runList.add(new Run("Cremorne Crush", 2.9,R.drawable.cremorne_point, getString(R.string.loop), getString(R.string.cremorne_nav_string)));
-        runList.add(new Run("Centennial Circuit", 3.6,R.drawable.centennial_park, getString(R.string.loop), getString(R.string.centennial_nav_string)));
-        runList.add(new Run("Barangaroo Bounce", 1.5,R.drawable.barangaroo, getString(R.string.loop), getString(R.string.barangaroo_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.botanic_blast_string), 1.5, R.drawable.botanic_gardens, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.bridge_dash_string), 2.7,R.drawable.sydney_harbour_bridge, getString(R.string.one_way), getString(R.string.harbour_bridge_nav_string)));
+        runList.add(new Run(getString(R.string.cremorne_crush_string), 2.9,R.drawable.cremorne_point, getString(R.string.loop), getString(R.string.cremorne_nav_string)));
+        runList.add(new Run(getString(R.string.centennial_circuit_string), 3.6,R.drawable.centennial_park, getString(R.string.loop), getString(R.string.centennial_nav_string)));
+        runList.add(new Run(getString(R.string.barangaroo_bounce_string), 1.5,R.drawable.barangaroo, getString(R.string.loop), getString(R.string.barangaroo_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
 
     }
 

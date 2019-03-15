@@ -54,10 +54,10 @@ public class MediumRunsFragment extends Fragment {
                             Intent i = new Intent(Intent.ACTION_SEND);
                             i.setType("text/plain");
                             i.putExtra(Intent.EXTRA_SUBJECT, "@string/app_name");
-                            String message = "I'm using "+ getResources().getString(R.string.app_name) + " to recommend this running route!\n";
+                            String message = getString(R.string.im_using_string)+ getResources().getString(R.string.app_name) + getString(R.string.to_recommend_String);
                             message = message + " "+ currentRun.getNavigationString();
                             i.putExtra(Intent.EXTRA_TEXT, message);
-                            startActivity(Intent.createChooser(i, "choose one"));
+                            startActivity(Intent.createChooser(i, getString(R.string.choose_one_string)));
 
                         }catch(Exception e){
                             e.toString();
@@ -76,17 +76,18 @@ public class MediumRunsFragment extends Fragment {
     private void buildRunList()
     {
         runList = new ArrayList<>();
-        runList.add(new Run("The Bay Run", 7.0, R.drawable.the_bay_run, getString(R.string.one_way),getString(R.string.bay_run_nav_string)));
-        runList.add(new Run("Bondi to Coogee", 5.5,R.drawable.bondi_to_coogee, getString(R.string.one_way), getString(R.string.bondi_nav_string)));
-        runList.add(new Run("Spit to Manly", 8.8,R.drawable.spit_to_manly, getString(R.string.one_way), getString(R.string.spit_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.the_bay_run_string), 7.0, R.drawable.the_bay_run, getString(R.string.one_way),getString(R.string.bay_run_nav_string)));
+        runList.add(new Run(getString(R.string.bondi_to_coogee_string), 5.5,R.drawable.bondi_to_coogee, getString(R.string.one_way), getString(R.string.bondi_nav_string)));
+        runList.add(new Run(getString(R.string.spit_to_manly_string), 8.8,R.drawable.spit_to_manly, getString(R.string.one_way), getString(R.string.spit_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
 
     }
 }

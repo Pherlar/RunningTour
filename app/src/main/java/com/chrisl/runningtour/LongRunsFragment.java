@@ -55,10 +55,10 @@ public class LongRunsFragment extends Fragment {
                             Intent i = new Intent(Intent.ACTION_SEND);
                             i.setType("text/plain");
                             i.putExtra(Intent.EXTRA_SUBJECT, "@string/app_name");
-                            String message = "I'm using "+ getResources().getString(R.string.app_name) + " to recommend this running route!\n";
+                            String message = getString(R.string.im_using_string)+ getResources().getString(R.string.app_name) + getString(R.string.to_recommend_String);
                             message = message + " "+ currentRun.getNavigationString();
                             i.putExtra(Intent.EXTRA_TEXT, message);
-                            startActivity(Intent.createChooser(i, "choose one"));
+                            startActivity(Intent.createChooser(i, getString(R.string.choose_one_string)));
 
                         }catch(Exception e){
                             e.toString();
@@ -78,20 +78,20 @@ public class LongRunsFragment extends Fragment {
     private void buildRunList()
     {
         runList = new ArrayList<>();
-        runList.add(new Run("Brighton-Le-Sands tourer", 16.1, R.drawable.brighton_le_sands, getString(R.string.out_and_back_string),getString(R.string.brighton_nav_string)));
-        runList.add(new Run("Cooks River Run", 19.6,R.drawable.cooks_river_run, getString(R.string.one_way_String), getString(R.string.cooks_river_nav_string)));
-        runList.add(new Run("Sydney Harbour Explorer", 18.0,R.drawable.anzac_bridge, getString(R.string.urban_loop_string), getString(R.string.opera_house_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.brighton_le_sands_tourer_string), 16.1, R.drawable.brighton_le_sands, getString(R.string.out_and_back_string),getString(R.string.brighton_nav_string)));
+        runList.add(new Run(getString(R.string.cooks_river_run_string), 19.6,R.drawable.cooks_river_run, getString(R.string.one_way_String), getString(R.string.cooks_river_nav_string)));
+        runList.add(new Run(getString(R.string.sydney_harbour_explorer_string), 18.0,R.drawable.anzac_bridge, getString(R.string.urban_loop_string), getString(R.string.opera_house_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
 
     }
 }

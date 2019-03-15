@@ -54,10 +54,10 @@ public class NoveltyRunsFragment extends Fragment {
                             Intent i = new Intent(Intent.ACTION_SEND);
                             i.setType("text/plain");
                             i.putExtra(Intent.EXTRA_SUBJECT, "@string/app_name");
-                            String message = getString(R.string.Im_using)+ getResources().getString(R.string.app_name) + getString(R.string.to_recommend);
+                            String message = getString(R.string.im_using_string)+ getResources().getString(R.string.app_name) + getString(R.string.to_recommend_String);
                             message = message + " "+ currentRun.getNavigationString();
                             i.putExtra(Intent.EXTRA_TEXT, message);
-                            startActivity(Intent.createChooser(i, getString(R.string.choose_one)));
+                            startActivity(Intent.createChooser(i, getString(R.string.choose_one_string)));
 
                         }catch(Exception e){
                             e.toString();
@@ -77,15 +77,15 @@ public class NoveltyRunsFragment extends Fragment {
     private void buildRunList() {
         runList = new ArrayList<>();
 
-        runList.add(new Run("Sydney Colour Run", 5.0, R.drawable.colour_run, getString(R.string.fun_run_official_event),getString(R.string.colour_run_nav_string)));
-        runList.add(new Run("Waverton Stair Sesh", 1.0, R.drawable.gas_works, getString(R.string.stairs_and_hills_loop),getString(R.string.waverton_nav_string)));
-        runList.add(new Run("Beer Belly Bolt", 9.4, R.drawable.grifter, getString(R.string.one_way_brewery_tour),getString(R.string.beer_belly_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-        runList.add(new Run("Placeholder", 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
-
+        runList.add(new Run(getString(R.string.sydney_colour_run_string), 5.0, R.drawable.colour_run, getString(R.string.fun_run_official_event),getString(R.string.colour_run_nav_string)));
+        runList.add(new Run(getString(R.string.waverton_stair_sesh_string), 1.0, R.drawable.gas_works, getString(R.string.stairs_and_hills_loop),getString(R.string.waverton_nav_string)));
+        runList.add(new Run(getString(R.string.beer_belly_bolt_string), 9.4, R.drawable.grifter, getString(R.string.one_way_brewery_tour),getString(R.string.beer_belly_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
+        runList.add(new Run(getString(R.string.placeholder_string), 1.0, R.drawable.background_image, getString(R.string.out_and_back_string),getString(R.string.placeholder_nav_string)));
     }
 }
